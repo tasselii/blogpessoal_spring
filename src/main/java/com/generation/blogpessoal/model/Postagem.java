@@ -30,8 +30,7 @@ public class Postagem {
 	@Pattern(regexp = "^[^0-9].*", message = "A descrição não pode ser apenas numérico")
 	@Size(min = 5, max = 100, message = "O atributo título deve ter no minimo 5 e no máximo 100 caracteres")
 	private String titulo;
-	
-	
+
 	@Column(length = 1000)
 	@NotBlank(message = "O atributo texto é obrigatório") 
 	@Size(min = 10, max = 1000, message = "O atributo título deve ter no minimo 10 e no máximo 1000 caracteres")
@@ -43,6 +42,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 
 	public Tema getTema() {
 		return tema;
@@ -82,6 +85,14 @@ public class Postagem {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }
