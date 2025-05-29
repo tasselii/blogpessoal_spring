@@ -1,6 +1,6 @@
 # API BLOG PESSOAL
 
-🔗 **Link de Teste da API:** [Link do Deploy no Render - *Substituir pelo link real*]
+🔗 **Link de Teste da API:** https://blogpessoal-oros.onrender.com/swagger-ui/index.html
 
 🔐 **Acesso Padrão:**
 
