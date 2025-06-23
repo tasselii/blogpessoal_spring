@@ -94,7 +94,5 @@ public class PostagemController {
 			.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 		
 		postagemRepository.deleteById(id);
-		
-		// DELETE FROM tb_postagens WHERE id =?;
 	}
 }

@@ -1,6 +1,7 @@
 package com.generation.blogpessoal.configuration;
 
 import org.springdoc.core.customizers.OpenApiCustomizer;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,7 +20,7 @@ public class SwaggerConfig {
     OpenAPI springBlogPessoalOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("Projeto Blog Pessoal")
+                .title("Projeto Farmacia API")
                 .description("Projeto Blog Pessoal - Generation Brasil")
                 .version("v0.0.1")
                 .license(new License()
