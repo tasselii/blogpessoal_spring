@@ -1,9 +1,13 @@
 package com.generation.blogpessoal.configuration;
 
+import java.util.List;
+
 import org.springdoc.core.customizers.OpenApiCustomizer;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -17,23 +21,28 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 
 	@Bean
-    OpenAPI springBlogPessoalOpenAPI() {
-        return new OpenAPI()
-            .info(new Info()
-                .title("Projeto Blog Pessoal")
-                .description("Projeto Blog Pessoal - Generation Brasil")
-                .version("v0.0.1")
-                .license(new License()
-                    .name("Generation Brasil")
-                    .url("https://brazil.generation.org/"))
-                .contact(new Contact()
-                    .name("Thiago Tasseli")
-                    .url("https://www.linkedin.com/in/thiagotasseli-tech/")
-                    .email("tasselii.dev@outlook.com.br")))
-            .externalDocs(new ExternalDocumentation()
-                .description("Github")
-                .url("https://github.com/tasselii"));
-    }
+	OpenAPI springBlogPessoalOpenAPI() {
+	    return new OpenAPI()
+	        .info(new Info()
+	            .title("Projeto Blog Pessoal")
+	            .description("Projeto Blog Pessoal - Generation Brasil")
+	            .version("v0.0.1")
+	            .license(new License()
+	                .name("Generation Brasil")
+	                .url("https://brazil.generation.org/"))
+	            .contact(new Contact()
+	                .name("Thiago Tasseli")
+	                .url("https://www.linkedin.com/in/thiagotasseli-tech/")
+	                .email("tasselii.dev@outlook.com.br")))
+	        .externalDocs(new ExternalDocumentation()
+	            .description("Github")
+	            .url("https://github.com/tasselii"))
+	        .servers(List.of(
+	            new io.swagger.v3.oas.models.servers.Server()
+	                .url("https://blogpessoalspring-production.up.railway.app/") // Substitua pela sua URL real
+	        ));
+	}
+
 
 
 	@Bean
